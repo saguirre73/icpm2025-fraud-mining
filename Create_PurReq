@@ -1,0 +1,13 @@
+// Pseudocode SQL transformation script to mine 'Create Purchase Requisition' events from data
+
+START
+	SELECT DISTINCT
+		'Client',
+		'Purchase Order Number',
+		'Position',
+		<String: "Create Purchase Requisition">,
+		'Timestamp',
+		'User',
+		<int: sorting Value>
+	FROM Purchase Requisition Document
+END
