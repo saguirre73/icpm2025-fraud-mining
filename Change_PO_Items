@@ -1,0 +1,24 @@
+// Pseudocode SQL transformation script to mine 'Change in PO Items' events from data
+
+START
+	SELECT DISTINCT
+		'Client',
+		'Purchase Order Number',
+		'Position',
+		CASE
+			WHEN 'Changed Field' = 'Quantity' THEN <String: "Change in PO Item Quantity">
+			WHEN … // Change in fields which are relevant to Purchase Orders
+			ELSE <String: "Change in PO Item">
+		END,
+		Timestamp,
+		User,
+		<int: sorting Value>
+	FROM Change Document Header
+	JOIN Change Document Position
+		ON Change Document Number
+	INNER JOIN Purchase Document Header // This filters on only changes recorded in the purchase order
+		ON Table Key
+	INNER JOIN Purchase Document Position
+		ON Table Key
+	WHERE Change Type = 'Update'
+END
