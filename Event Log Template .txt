@@ -1,0 +1,11 @@
+START
+	CREATE TABLE EventLog (
+		'Client' VARCHAR(31), // SAP specific field 
+		'Purchase Order Number' VARCHAR(32), // SAP specific field
+		'Position' VARCHAR(32), // SAP specific field
+		'Event Name' VARCHAR(255),
+		'Timestamp' DATETIME,
+		'User' VARCHAR(255),
+		'Sorting' INT
+	)
+END
